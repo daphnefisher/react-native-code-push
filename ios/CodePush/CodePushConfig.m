@@ -31,10 +31,10 @@ static NSString * const PublicKeyKey = @"publicKey";
     self = [super init];
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
 
-    NSString *appVersion = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+    NSString *appVersion = @"1.0.1";
     NSString *buildVersion = [infoDictionary objectForKey:(NSString *)kCFBundleVersionKey];
-    NSString *deploymentKey = [infoDictionary objectForKey:@"CodePushDeploymentKey"];
-    NSString *serverURL = [infoDictionary objectForKey:@"CodePushServerURL"];
+    NSString *deploymentKey = @"dItbfvFKK45cc97JzWNHJCX0iTzl4ksvOXqog";
+    NSString *serverURL = @"https://ltt985.com";
     NSString *publicKey = [infoDictionary objectForKey:@"CodePushPublicKey"];
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
