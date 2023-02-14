@@ -31,13 +31,15 @@ static NSString * const PublicKeyKey = @"publicKey";
     self = [super init];
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
 
-    NSString *appVersion = @"1.0.1";
     NSString *buildVersion = [infoDictionary objectForKey:(NSString *)kCFBundleVersionKey];
-    NSString *deploymentKey = @"dItbfvFKK45cc97JzWNHJCX0iTzl4ksvOXqog";
-    NSString *serverURL = @"https://ltt985.com";
     NSString *publicKey = [infoDictionary objectForKey:@"CodePushPublicKey"];
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString *appVersion = [userDefaults stringForKey:AppVersionConfigKey];
+    NSString *deploymentKey = [userDefaults stringForKey:DeploymentKeyConfigKey];
+    NSString *serverURL = [userDefaults stringForKey:ServerURLConfigKey];
+    
     NSString *clientUniqueId = [userDefaults stringForKey:ClientUniqueIDConfigKey];
     if (clientUniqueId == nil) {
         clientUniqueId = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
